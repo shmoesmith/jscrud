@@ -1,9 +1,9 @@
 class CharactersController < ApplicationController
-  before_action :set_game, only: [:index, :create]
+  before_action :set_planet, only: [:index, :create]
   before_action :set_character, only: [:show, :update, :destroy]
 
   def index
-   render json: @game.characters
+   render json: @planet.characters
   end
 
   def show
@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = @game.characters.new(character_params)
+    @character = @planet.characters.new(character_params)
     if @character.save
       render json: @character
     else

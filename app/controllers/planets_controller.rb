@@ -22,6 +22,7 @@ class PlanetsController < ApplicationController
       render json: @planet
     else
       render_error(@planet)
+    end
   end
 
   def destroy
