@@ -7,7 +7,12 @@ class PlanetsController < ApplicationController
 
   def show
   end
-
+  
+  def form
+    @planet = Planet.new
+    render partial: 'form'
+  end
+  
   def create
     @planet = Planet.new(planet_params)
     if @planet.save
